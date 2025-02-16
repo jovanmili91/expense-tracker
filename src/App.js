@@ -21,10 +21,11 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/upload", {
+      const response = await fetch("/api/upload", {
         method: "POST",
         body: formData,
       });
+
       const data = await response.json();
       setTransactions(data.data);
     } catch (error) {
